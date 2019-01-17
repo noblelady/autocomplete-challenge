@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  padding-top: 5px;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.autocomplete-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.autocomplete-section {
+  margin: 10px;
+}
+
+h3{
+  margin: 10px;
+}
+
+#info {
+  font-size: 20px;
+  margin: 0;
+}

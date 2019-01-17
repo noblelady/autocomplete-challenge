@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Autocomplete Challenge
 
 In the project directory, you can run:
 
@@ -17,52 +17,21 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### How it works
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This is a single page web app with two inputs, one for cities and the other for books.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Once at least 3 letters are entered into the appropriate text input then you will get either a list of suggestions or the no results found message.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Data Store
+It was stated that a data store should be used. so I opted for just the regular react state store. I didn't want to make things overly complex.
 
-### `npm run eject`
+#### Manage Objects in the Array
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+One of the issues that needed addressing was how to deal with both datasets, because one is an array of strings and the other is an array of objects. So in the AutoInput we have the handleChange function which checks to see if we have objects of strings.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If it is an object we assume that it is under the book dataset. and use the 'title' key for the primary check then the 'author key for the other check'. I probably could have done something else with getting the first key and then the second key in the object, but since I was assuming that all the objects in the books array would have the same structure that wasn't a real issue.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+So I instead got all the values for the titles and mapped that to an array which I then used the filtering for. If the filteredTitles is empty I then use the filteredAuthors.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+I would also like to apologize for the color scheme, I'm not that great at making things pretty without a designer.

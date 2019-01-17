@@ -1,0 +1,17 @@
+.item-wrapper{
+  margin: 2px 0;
+  padding: 5px;
+  font-size: 15px;
+  text-align: left;
+  background-color: #909090;
+}
+
+.active-item {
+  background-color: yellow;
+  padding: 0;
+  color: black;
+}
+
+.nonactive-item {
+  background-color: #909090;
+}
